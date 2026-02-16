@@ -48,7 +48,7 @@ const Navbar = () => {
               setIsOurBankOpen(false);
             }}
           >
-            <div className="flex bg-gray-100 rounded-full p-1">
+            <div className="flex bg-gray-100 font-medium rounded-full p-1">
               <button
                 onMouseEnter={() => setSegment("ferdi")}
                 onClick={() => setSegment("ferdi")}
@@ -77,10 +77,10 @@ const Navbar = () => {
         </div>
 
         {/* RIGHT NAV */}
-        <nav className="hidden md:flex items-center gap-6 text-sm text-gray-600">
+        <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
           
           <div
-            className="cursor-pointer hover:text-primary"
+            className="cursor-pointer hover:text-red-600"
             onMouseEnter={() => {
               setIsOurBankOpen(true);
               setIsBankDropdownOpen(false);
@@ -91,14 +91,14 @@ const Navbar = () => {
 
           <NavLink
             to="/mobile-banking"
-            className="hover:text-primary"
+            className="hover:text-primary text-red-600"
           >
             Mobil Bankçılıq
           </NavLink>
 
           <NavLink
             to="/internet-banking"
-            className="hover:text-primary"
+            className="hover:text-primary text-red-600"
           >
             İnternet Bankçılıq
           </NavLink>

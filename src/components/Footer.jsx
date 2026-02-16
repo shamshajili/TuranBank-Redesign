@@ -20,43 +20,90 @@ const footerLinks = [
       "Rəhbərlik",
       "Təşkilati struktur",
       "Xidmət şəbəkəsi",
+      "İllik hesabat",
+      "Maliyyə hesabatları",
+      "Səhmdarlar",
+      "Risklərin idarə edilməsi",
+      "İnsan resursları",
+      "Məxfilik siyasəti",
+      "Rəqəmsal pul kisəsinin istifadəsi şərtləri və qaydaları",
+      "ƏL/TMM haqqında Qanunda dəyişikliklər",
+      "Təkliflər və şikayətlər"
     ],
   },
   {
     title: "Fərdi Bankçılıq",
     links: [
+      "Valyuta əməliyyatları",
       "Kreditlər",
+      "eManat aparatından ödənişlər",
+      "MilliÖN aparatından ödənişlər",
       "Plastik kartlar",
       "Pul köçürmələri",
       "Əmanətlər",
-      "Valyuta kursları",
+      "Bank məsləhətləri",
+      "Valyuta Kursları"
     ],
   },
   {
     title: "Biznes Bankçılıq",
     links: [
+      "Valyuta-mübadilə əməliyyatları",
       "Kreditlər",
+      "Xüsusi Lahiyə kreditləri",
       "Depozitlər",
-      "POS xidmətləri",
-      "İnkassasiya",
+      "Sənədli əməliyyatlar",
+      "Əmək haqqı lahiyələri",
+      "POS-terminal xidməti",
+      "İnkasassiya",
     ],
   },
   {
     title: "Investorlarla əlaqə",
     links: [
+      "Beynəlxalq əlaqələr",
       "Korporativ idarəetmə",
-      "Dividend siyasəti",
-      "Maliyyə hesabatları",
+      "Dividend siyasəti"
     ],
+  },
+  {
+    title: "Banklararasi Biznes",
+    links: [
+      "Banklararası əməliyyatlar"
+    ],
+  },
+];
+
+const socialLinks = [
+  {
+    href: "https://www.instagram.com/turanbank/",
+    icon: FaInstagram,
+    label: "Instagram",
+  },
+  {
+    href: "https://www.facebook.com/TuranBankASC",
+    icon: FaFacebookF,
+    label: "Facebook",
+  },
+  {
+    href: "https://www.linkedin.com/company/turanbank-ojsc",
+    icon: FaLinkedinIn,
+    label: "LinkedIn",
+  },
+  {
+    href: "https://api.whatsapp.com/send/?phone=994502687222&text&type=phone_number&app_absent=0",
+    icon: FaWhatsapp,
+    label: "WhatsApp",
   },
 ];
 
 const Footer = () => {
   return (
     <footer className="bg-[#f7f9fc] border-t border-gray-200">
+      {/* MAIN FOOTER */}
       <div className="max-w-7xl mx-auto px-4 py-16">
-        {/* TOP BRAND */}
-        <div className="flex flex-col lg:flex-row justify-between gap-12 mb-16">
+        <div className="flex flex-col lg:flex-row justify-between gap-14 mb-16">
+
           {/* LEFT */}
           <div className="max-w-md">
             <img src={turanLogo} alt="TuranBank" className="h-10 mb-6" />
@@ -67,20 +114,22 @@ const Footer = () => {
             </p>
 
             <div className="flex gap-3">
-              {[FaInstagram, FaFacebookF, FaLinkedinIn, FaWhatsapp].map(
-                (Icon, i) => (
-                  <div
-                    key={i}
-                    className="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-gray-600 hover:text-[#1b75bb] hover:shadow-md transition cursor-pointer"
-                  >
-                    <Icon />
-                  </div>
-                )
-              )}
+              {socialLinks.map(({ href, icon: Icon, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center 
+                             text-gray-600 hover:text-[#1b75bb] hover:shadow-md transition"
+                >
+                  <Icon size={20} />
+                </a>
+              ))}         
             </div>
           </div>
 
-          {/* LINK CARDS */}
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 w-full">
             {footerLinks.map((section, i) => (
               <div
@@ -105,33 +154,33 @@ const Footer = () => {
             ))}
           </div>
         </div>
+      </div>
 
-        <div className="bg-[#1b75bb] mt-12">
-          <div className="max-w-7xl mx-auto px-4 py-8">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+      <div className="w-full bg-[#1b75bb]">
+        <div className="max-w-7xl mx-auto px-4 py-8">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
 
-              <p className="text-sm text-white/90 text-center lg:text-left">
-                © 2026 TuranBank ASC. Bütün hüquqlar qorunur.
-              </p>
+            <p className="text-sm text-white/90 text-center lg:text-left">
+              © 2026 TuranBank ASC. Bütün hüquqlar qorunur.
+            </p>
 
-              <div className="flex flex-wrap items-center justify-center gap-10">
-                {[partner1, partner2, partner3, partner4].map((logo, i) => (
-                  <div
-                    key={i}
-                    className="bg-white/10 rounded-xl p-3 hover:bg-white/20 transition"
-                  >
-                    <img
-                      src={logo}
-                      alt="partner"
-                      className="h-14 md:h-16 object-contain"
-                    />
-                  </div>
-                ))}
-              </div>
+            <div className="flex flex-wrap items-center justify-center gap-8">
+              {[partner1, partner2, partner3, partner4].map((logo, i) => (
+                <div
+                  key={i}
+                  className="bg-white/10 rounded-xl p-3 hover:bg-white/20 transition"
+                >
+                  <img
+                    src={logo}
+                    alt="partner"
+                    className="h-14 md:h-16 object-contain"
+                  />
+                </div>
+              ))}
             </div>
+
           </div>
         </div>
-
       </div>
     </footer>
   );
