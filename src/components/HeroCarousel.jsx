@@ -53,17 +53,24 @@ const HeroCarousel = () => {
                 hover:shadow-[0_40px_90px_rgba(0,0,0,0.25)]
               "
             >
-              <img
-                  src={slide.image}
-                  alt=""
-                  className="
-                    w-full
-                    h-full
-                    object-contain
-                    md:object-cover
-                    bg-[#1b75bb]
-                  "
-                />
+             <img
+                src={slide.image}
+                alt=""
+                className="
+                  w-full
+                  h-full
+                    
+                  object-contain
+                  md:object-cover
+                    
+                  scale-100
+                  md:scale-100
+                    
+                  bg-transparent
+                  md:bg-[#1b75bb]
+                "
+              />
+
             </div>
           </a>
         </SwiperSlide>
