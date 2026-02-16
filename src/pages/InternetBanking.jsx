@@ -12,7 +12,6 @@ const InternetBanking = () => {
         shadow-2xl
       ">
 
-        {/* LEFT – LOGIN */}
         <div className="
           flex items-center justify-center
           px-6 py-12 sm:px-12
@@ -23,7 +22,6 @@ const InternetBanking = () => {
           </div>
         </div>
 
-        {/* RIGHT – BRANDING */}
         <div className="
           hidden lg:flex
           relative
@@ -33,7 +31,6 @@ const InternetBanking = () => {
           px-16
         ">
 
-          {/* TEXT */}
           <div className="relative z-10 max-w-lg">
             <h2 className="text-5xl font-bold leading-tight mb-8">
               Yeniliklərimizlə <br /> qarşınızdayıq
@@ -46,7 +43,6 @@ const InternetBanking = () => {
             </p>
           </div>
 
-          {/* WATERMARK / OVERLAY */}
           <div className="
             absolute inset-0
             bg-[url('/logo-watermark.svg')]
