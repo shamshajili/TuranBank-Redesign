@@ -2,25 +2,16 @@ import appImg from "../assets/images/app-launching-turanbank_az.jpg";
 import googlePlay from "../assets/images/google-play.svg";
 import appStore from "../assets/images/app-store.svg";
 import appGallery from "../assets/images/app_gall.png";
-
-const features = [
-  "Kreditlərin onlayn ödənişi",
-  "Onlayn kredit sifarişi",
-  "Kart sifarişi",
-  "Sosial məsuliyyət",
-  "Kommunal ödənişlər",
-  "Cashback",
-  "Tariflər",
-  "Filial və bankomatlar",
-  "Banklararası kart mərkəzi (BKM)",
-];
+import FeaturesList from "./FeaturesList";
+import { useNavigate } from "react-router-dom";
 
 const MobileBankingApps = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="bg-white py-20">
       <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center">
 
-        {/* LEFT */}
         <div className="bg-[#1b75bb] rounded-[40px] px-8 sm:px-12 py-12 text-white">
 
           <p className="uppercase text-sm tracking-widest opacity-90 mb-2">
@@ -31,13 +22,12 @@ const MobileBankingApps = () => {
             TuranBank MobilBank
           </h2>
 
-          {/* APP IMAGE – ƏSAS ELEMENT */}
           <div className="flex justify-center mb-10">
             <img
               src={appImg}
               alt="TuranBank Mobile App"
               className="
-                w-full 
+                w-full
                 max-w-[520px]
                 rounded-2xl
                 shadow-2xl
@@ -45,15 +35,14 @@ const MobileBankingApps = () => {
             />
           </div>
 
-          {/* STORE BUTTONS – SECONDARY */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 justify-center">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
             {[googlePlay, appStore, appGallery].map((img, i) => (
               <a
                 key={i}
                 href="#"
                 className="
                   bg-white rounded-xl px-4 py-3
-                  flex justify-center
+                  flex justify-center items-center
                   hover:scale-105 hover:shadow-lg
                   transition
                 "
@@ -64,41 +53,10 @@ const MobileBankingApps = () => {
           </div>
         </div>
 
-        {/* RIGHT */}
-        <div>
-          <h3 className="text-3xl font-semibold mb-10">
-            Mobil tətbiqin imkanları
-          </h3>
-
-          <ul className="space-y-4">
-            {features.map((item, i) => (
-              <li
-                key={i}
-                className="
-                  group flex items-center justify-between
-                  border-b py-3 cursor-pointer
-                "
-              >
-                <span className="text-gray-700 group-hover:text-red-600 transition">
-                  {item}
-                </span>
-                <span className="text-gray-400 group-hover:text-red-600 transition">
-                  →
-                </span>
-              </li>
-            ))}
-          </ul>
-
-          <button
-            className="
-              mt-10 px-10 py-4 rounded-xl
-              bg-red-600 text-white font-medium
-              hover:bg-red-700 transition
-            "
-          >
-            Valyuta kursları
-          </button>
-        </div>
+        <FeaturesList
+          title="Mobil tətbiqin imkanları"
+          onButtonClick={() => navigate("/valyuta-kurslari")}
+        />
 
       </div>
     </section>

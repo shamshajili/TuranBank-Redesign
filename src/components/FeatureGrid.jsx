@@ -14,7 +14,7 @@ const features = [
   {
     title: "İnvestisiya pul nişanları",
     icon: HiOutlineCollection,
-    link: "/investment-coins",
+    link: "/investisiya",
   },
   {
     title: "Onlayn sifarişlər",

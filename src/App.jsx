@@ -6,6 +6,7 @@ import AuthLayout from "./layout/AuthLayout";
 import Home from "./pages/Home";
 import MobileBanking from "./pages/MobileBanking";
 import InternetBanking from "./pages/InternetBanking";
+import Investisiya from "./pages/Investisiya";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
 
       <Route element={<MainLayout />}>
         <Route path="/" element={<Home />} />
+        <Route path="/investisiya" element={<Investisiya />} />
         <Route path="/mobile-banking" element={<MobileBanking />} />
       </Route>
 
